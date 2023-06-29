@@ -11,7 +11,7 @@ function first(arr) {
 // Modify the function below to return the length of the array that is being passed in
 
 function length(arr) {
-  //Code here
+  return arr.length;
 }
 
 //////////////////PROBLEM 3////////////////////
@@ -19,7 +19,7 @@ function length(arr) {
 // Modify the function below to return the last item of the array that is being passed in
 
 function last(arr) {
-  //Code here
+  return arr[arr.length - 1];
 }
 
 //////////////////PROBLEM 4////////////////////
@@ -27,7 +27,7 @@ function last(arr) {
 // Modify the function below to add the passed in number to the end of the passed in array
 
 function addItem(array, number) {
-  //Code here
+  array.push(number);
   return array;
 }
 
@@ -36,8 +36,8 @@ function addItem(array, number) {
 // Modify the function below to remove the last item of the array being passed in
 
 function removeLast(array) {
-  //Code here
-  return array;
+  array.pop();
+  return array
 }
 
 //////////////////PROBLEM 6////////////////////
@@ -45,8 +45,7 @@ function removeLast(array) {
 // Modify the function below to remove the first item of the array being passed in
 
 function removeFirst(array) {
-  //Code here
-  return array;
+ return array.slice(1);
 }
 
 //////////////////PROBLEM 7////////////////////
@@ -56,7 +55,7 @@ function removeFirst(array) {
 function maker() {
   let numbers = [];
   for (let i = 0; i <= 25; i++) {
-    //Code here
+    numbers.push(i)
   }
 
   return numbers;
@@ -68,8 +67,9 @@ function maker() {
 
 function count31() {
   let numbers = [];
-
-  //Code here
+  for(let i = 0; i <=31; i++){
+    numbers.push(i)
+  }
 
   return numbers;
 }
@@ -86,7 +86,7 @@ function backWards(arr) {
   let newArray = [];
 
   for (let i = arr.length - 1; i >= 0; i--) {
-    // code here
+    newArray.push(arr[i])
   }
 
   return newArray;
@@ -100,7 +100,7 @@ function backWards(arr) {
 // findInArray([0,1,2,3], 4); -> false
 
 function findInArray(arr, value) {
-  // code here
+  return arr.includes(value);
 }
 
 //////////////////PROBLEM 11////////////////////
@@ -114,11 +114,12 @@ function addTen(arr) {
   let newArr = [];
 
   for (let i = 0; i < arr.length; i++) {
-    // code here
+    newArr.push(arr[i] + 10);
   }
 
   return newArr;
 }
+
 
 //////////////////PROBLEM 12////////////////////
 
@@ -131,7 +132,7 @@ function personName() {
     age: 29,
     location: 'Orem, UT',
   }
-  return // Code here
+  return person.firstName;
 }
 
 //////////////////PROBLEM 13////////////////////
@@ -145,7 +146,7 @@ function personLocation() {
     age: 29,
     location: 'Orem, UT',
   }
-  return // Code Here
+  return person['location']
 }
 
 //////////////////PROBLEM 14////////////////////
@@ -154,7 +155,7 @@ function personLocation() {
 
 const backpack = {};
 
-// Code Here
+backpack.frontPocket = "compass";
 
 //////////////////PROBLEM 15////////////////////
 
@@ -162,7 +163,7 @@ const backpack = {};
 
 const box = {};
 
-// Code Here
+box['material'] = 'cardboard';
 
 //////////////////PROBLEM 16////////////////////
 
@@ -172,7 +173,7 @@ const person = {};
 
 person['firstName'] = 'sally';
 
-//code here
+let userFirstName = person.firstName;
 
 //////////////////PROBLEM 17////////////////////
 
@@ -186,7 +187,11 @@ person['firstName'] = 'sally';
 // };
 
 function updateUser(user) {
-  // Code Here
+  user.name = "Ryan",
+  user.pwHash = 'superSafe',
+  user.username = 'ryan2020'
+
+  return user
 }
 
 //////////////////PROBLEM 18////////////////////
