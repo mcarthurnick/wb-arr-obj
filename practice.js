@@ -199,20 +199,25 @@ function updateUser(user) {
 //Inside the function updateEmail, update the email property of the passed in object to be the value of the parameter str. Return the updated object.
 
 function updateEmail(obj, str) {
-  // Code here
+  obj.email = str;
+  return obj
 }
 
 //////////////////PROBLEM 19////////////////////
 
 // Write a function called isOldEnough that takes a person obj and checks the age property to see if the person is old enough to enter the club.  If they are 21 or older return true else return false.
 
-// Code here
+function isOldEnough(perObj){
+  return perObj.age > 21 ? true : false;
+}
 
 //////////////////PROBLEM 20////////////////////
 
 //Create a function called addRole that takes in a user object as the first parameter and a string as the second parameter.  The string will represent the user's new role in the system (i.e. admin, creator, editor, visitor). Create a new property on the user object called "role" and assign the passed in string to it, then return the updated object.
 
-// Code here
+function addRole(userObj, str){
+  return userObj.role = str;
+}
 
 ///////////////////////////////////////////////////////
 
@@ -250,6 +255,7 @@ function schoolStatus(status) {
   // } else {
   //   return 'No more video games!'
   // }
+  return status === 'Good' ? 'Wow, great job kiddo!' : 'No more video games!'
 }
 
 //////////////////PROBLEM 22////////////////////
@@ -261,7 +267,7 @@ function schoolStatus(status) {
 // If age is greater than 18, return: Somebody is really getting up there, huh?
 
 function messageBasedOnAge(age) {
-  //code here
+  return age < 18 ? "Not quite old enough, sorry." : age === 18 ? 'Congrats on being an adult!' : 'Somebody is really getting up there, huh?'
 }
 
 //////////////////PROBLEM 23////////////////////
@@ -269,7 +275,9 @@ function messageBasedOnAge(age) {
 // Create a function called outerFn, that takes in a callback as a parameter, and then returns that callback invoked.
 // To see it working, invoke outerFn at the bottom, passing in innerFn as the callback. You should now see "The innerFn is a callback!" in the console.
 
-// Create function here
+function outerFn(cb){
+  return cb();
+}
 
 // ===== DO NOT TOUCH CODE BELOW THIS LINE ===== //
 function innerFn() {
@@ -277,7 +285,7 @@ function innerFn() {
 }
 // ===== DO NOT TOUCH CODE ABOVE THIS LINE ===== //
 
-// Invoke function here
+outerFn(innerFn);
 
 //////////////////PROBLEM 24////////////////////
 
@@ -286,6 +294,9 @@ function innerFn() {
 // To test, invoke fullName with your first name, last name and the welcomeMessage function as arguments.
 
 // Create function fullName here
+function fullName(firstName, lastName, cb){
+  return cb(firstName, lastName)
+}
 
 // ===== DO NOT TOUCH CODE BELOW THIS LINE ===== //
 function welcomeMessage(first, last) {
@@ -294,6 +305,7 @@ function welcomeMessage(first, last) {
 // ===== DO NOT TOUCH CODE ABOVE THIS LINE ===== //
 
 // Invoke fullName below
+fullName("Nick", "McArthur", welcomeMessage)
 
 //////////////////PROBLEM 25////////////////////
 
@@ -317,7 +329,13 @@ function drinkAlcohol() {
 
 // ===== DO NOT TOUCH CODE ABOVE THIS LINE ===== //
 
-// Create function canDrink here
+function canDrink(numAge, cb1, cb2){
+  if(numAge < 21){
+    return cb1()
+  } else if(numAge > 21){
+    return cb2()
+  }
+}
 
 //////////////////PROBLEM 26////////////////////
 
@@ -326,4 +344,15 @@ function drinkAlcohol() {
 // Write a function called math that takes in two numbers, and a callback 'operator' as parameters.
 // This function should return a operator invoked with the appropriate arguments.
 
-//Code here
+function add(num1, num2){
+  return num1 + num2
+}
+
+function multiply(num1, num2){
+  return num1 * num2
+}
+
+function math(num1, num2, cb){
+  return cb(num1, num2)
+}
+
